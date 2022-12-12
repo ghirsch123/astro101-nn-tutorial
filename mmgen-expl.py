@@ -106,7 +106,7 @@ def fold_lcs():
 
 #fold_lcs() # call to generate new .dats
     
-# get folded lcs
+# get folded lcs and compare them to lcs that are not folded
 def get_compare_lcs(name):
     file = get_file(name)
     target = vars.loc[vars['ID']==name]['ML_classification'].to_list()[0]
