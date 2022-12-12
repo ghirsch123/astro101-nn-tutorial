@@ -113,17 +113,6 @@ def get_compare_lcs(name):
     get_lc(file, name, target, FOLD_DIR, FOLD_OUT)
     get_lc(file, name, target, LC_DIR, LC_OUT)
 
-# define lists for test variable object types----------------
-#hads = vars.loc[vars['ML_classification']=='HADS']['ID'].to_list()
-#ea = vars.loc[vars['ML_classification']=='EA']['ID'].to_list()
-#rot = vars.loc[vars['ML_classification']=='ROT']['ID'].to_list()
-#only keep first 10 for each
-#hads = hads[:11]
-#ea = ea[:11]
-#rot = rot[:11]
-# append all to list
-#test_ls = [hads, ea, rot]
-
 # for actual data processing: go through each file in vs not periodic----------------
 
 
@@ -166,19 +155,6 @@ def get_var_data_file(df, file, isper, input):
     df_new = pd.concat([df, temp_df], ignore_index=True)
     #df_new = df.append(temp_var.return_dict(), ignore_index=True)
     return df_new
-
-# for a list of test objects
-def run_test(test_ls, mm_df):
-    isper = 1 # is periodic
-    for i in tqdm(range(len(test_ls)), desc='progress on outer loop', position=0, leave=True):
-        ls = test_ls[i]
-        for j in tqdm(range(len(ls)), desc='progress on inner loop', position=1, leave=True):
-            name = ls[j]
-            mm_df = get_var_data_name(mm_df, name, isper, FOLD_DIR) # generate the var functions
-            #get_compare_lcs(name) # make the lcs
-    return mm_df
-
-#mm_df = run_test(test_ls, mm_df)
 
 # for complete dataset
 def run_per(mm_df):
