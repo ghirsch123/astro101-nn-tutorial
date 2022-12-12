@@ -46,7 +46,7 @@ class Variable:
         self.chi2red = self.get_chi2red()
         # weighted standard deviation
         self.weighted_stdev = self.get_weighted_stdev()
-        # IQR
+        # interquartile range
         self.iqr = self.get_iqr()
         # robust median statistic
         self.roms = self.get_roms()
