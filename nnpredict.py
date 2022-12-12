@@ -1,3 +1,5 @@
+# by @oscars47 and @ghirsch123
+
 import os
 import numpy as np
 import pandas as pd
@@ -11,11 +13,11 @@ from scipy.interpolate import griddata
 from nnprep import *
 
 # load model
-MODEL_PATH = '/Users/morty/a101_comp/NN_Tutorial/NN_Tutorial_2/Graham-Data-Processing/nn_v0.0.1/wandb/run-20221128_141031-xe7ly1by/files/'
+MODEL_PATH = 'ENTER THE DIRECTORY THAT HAS THE LOCATION OF THE MODEL'
 model = load_model(os.path.join(MODEL_PATH, 'model-best.h5'))
 
 # load input_x and output targets
-DATA_DIR = '/Users/morty/a101_comp/NN_Tutorial/NN_Tutorial_2/Graham-Data-Processing/var_output2/'
+DATA_DIR = 'ENTER THE DIRECTORY THAT HAS ALL OF YOUR DATA IN IT'
 
 
 input_x = np.load(os.path.join(DATA_DIR, 'mm_n_extra.npy'))
