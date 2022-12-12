@@ -13,7 +13,7 @@ from vargen_slimmed import Variable
 
 # set directories, define helper functions for conversions
 
-DATA_DIR = '/Users/morty/a101_comp/NN_Tutorial/NN_Tutorial_2/Graham-Data-Processing/'
+DATA_DIR = 'ENTER THE DIRECTORY THAT HAS ALL OF YOUR DATA IN IT'
 LC_DIR = os.path.join(DATA_DIR, 'g_band_lcs')
 LC_OUT = os.path.join(DATA_DIR, 'lc_output')
 VAR_OUT = os.path.join(DATA_DIR, 'var_output3')
@@ -59,7 +59,7 @@ def get_name(file):
     return temp_name
 
 # get unique classes of variable objects---------------
-vars = pd.read_csv(os.path.join(DATA_DIR, 'df_total_500.csv'))
+vars = pd.read_csv(os.path.join(DATA_DIR, 'df_total_500.csv')) # df_total_500.csv should be the name of the slimmed data set, if you changed it change it again here
 var_unique_name = list(vars['ID'].unique())
 
 # to get the names, first split by '.dat' and remove final element (.dat), recombine; then split based on '_' and replace with ' '
