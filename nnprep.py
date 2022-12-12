@@ -7,7 +7,7 @@ from sklearn import metrics
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-DATA_DIR = '/Users/morty/a101_comp/NN_Tutorial/NN_Tutorial_2/Graham-Data-Processing/var_output3/'
+DATA_DIR = 'ENTER THE DIRECTORY THAT HAS ALL OF YOUR DATA IN IT'
 
 # read in csv
 global mm_n, unique_targets, targets
@@ -16,13 +16,6 @@ targets = mm_n['target'].to_list()
 #unique_targets = list(set(targets))
 unique_targets = ['SR', 'ROT', 'EW', 'EA', 'L']
 mm_n = mm_n.iloc[:, 4:]
-
-def get_heatmap():
-    # print(mm_n.head(5))
-    matrix = mm_n.corr().round(3)
-    sns.heatmap(matrix, annot=True)
-    plt.savefig(os.path.join(DATA_DIR, 'heatmap.jpeg'))
-    plt.show()
 
 # these hold the conversion from the list of var classes to indices in the list and vice versa
 def get_target_dicts():
@@ -34,6 +27,7 @@ def get_target_dicts():
 # initialize dicts
 get_target_dicts()
 
+# these one hot vectors is what the NN outputs, initializing them helps with training as it can verify whether it predicted correctly
 def make_1_hots(targets):
    target_1_hots = []
    for target in targets:
